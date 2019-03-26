@@ -8,8 +8,8 @@ RUN sed -i \
     -e 's/^Listen 80/Listen 0.0.0.0:8080/' \
     -e 's/^User apache/User default/' \
     -e 's/^Group apache/Group root/' \
-    -e 's/ErrorLog "logs/error_log"/ErrorLog "|/usr/bin/cat"/' \
-    -e 's/CustomLog "logs/access_log"/CustomLog "|/usr/bin/cat"/' \
+    -e 's%ErrorLog "logs/error_log"%ErrorLog "|/usr/bin/cat"%' \
+    -e 's%CustomLog "logs/access_log"%CustomLog "|/usr/bin/cat"%' \
     /etc/httpd/conf/httpd.conf && \
     chmod -R a+rwx /etc/httpd/logs && \
     rm -rf /run/httpd && \
