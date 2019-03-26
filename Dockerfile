@@ -14,12 +14,12 @@ RUN sed -i \
     /etc/httpd/conf/httpd.conf && \
     chmod -R a+rwx /var/run/httpd
 
-USER 1001
-
-EXPOSE 8080
-
 # Simple startup script to avoid some issues observed with container restart
 ADD run-httpd.sh /run-httpd.sh
 RUN chmod -v +x /run-httpd.sh
+
+USER 1001
+
+EXPOSE 8080
 
 CMD ["/run-httpd.sh"]
