@@ -13,7 +13,7 @@ RUN sed -i \
     -e 's/^Group apache/Group root/' \
     /etc/httpd/conf/httpd.conf && \
     chmod -R a+rwx /etc/httpd/logs && \
-    chmod -R a+rwx /var/run/httpd &&    
+    chmod -R a+rwx /var/run/httpd
 
 # Simple startup script to avoid some issues observed with container restart
 ADD run-httpd.sh /run-httpd.sh
